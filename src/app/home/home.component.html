@@ -1,0 +1,92 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | KOI STUDIO</title>
+</head>
+<body>
+    <!-- Section 1: Introduction -->
+    <section>
+        <div class="home-intro-container">
+            <div class="home-header-one">
+                <h1>Welcome to Koi Studio</h1>
+                <p>Where Love Stories Unfold, One Frame at a Time, One page at a time, and get personalized recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Top hits -->
+    <section>
+        <div class="home-top-header">
+            <h2>Popular Anime this week</h2>
+        </div>
+        <div *ngIf="topHits.length > 0; else noTopHits">
+            <div class="home-image-container">
+                <div *ngFor="let anime of topHits" class="home-image-box-container">
+                    <img [src]="anime.image" [alt]="anime.description">
+                    <p>{{ anime.title }}</p>
+                </div>
+            </div>
+            <!-- HETO YUNG PROBLEM HREF OR ROUTERLINK AYAW GOODLUCK HAHA TULOG NA AKO -->
+            <!-- Update: na ayos ko na yung problem, yung sa button para gumana router link need dapat
+                 na may import router module sa bawat TypeScript ng mga components -->
+            <a routerLink="/top-links"><button class="button">See More</button></a>
+        </div>
+        <ng-template #noTopHits>
+            <p>No popular anime available this week.</p>
+        </ng-template>
+    </section>
+
+    <!-- Section 3: End of 2024 -->
+    <section>
+        <div class="home-end-header">
+            <h2>End of 2024</h2>
+        </div>
+        <div *ngIf="endOfYearAnime.length > 0; else noEndOfYearAnime">
+            <div class="home-image-container">
+                <div *ngFor="let anime of endOfYearAnime" class="home-image-box-container">
+                    <img [src]="anime.image" [alt]="anime.description">
+                    <p>{{ anime.title }}</p>
+                </div>
+            </div>
+        </div>
+        <ng-template #noEndOfYearAnime>
+            <p>No anime highlights for the end of the year.</p>
+        </ng-template>
+    </section>
+
+    <!-- Section 4: Recommendations -->
+    <section>
+        <div class="home-top-header">
+            <h2>Recommendations</h2>
+        </div>
+        <div *ngIf="recommendations.length > 0; else noRecommendations">
+            <div class="home-image-container">
+                <div *ngFor="let anime of recommendations" class="home-image-box-container">
+                    <img [src]="anime.image" [alt]="anime.description">
+                    <p>{{ anime.title }}</p>
+                </div>
+            </div>
+            <a routerLink="/recommendation"><button class="button">See More</button></a>
+        </div>
+        <ng-template #noRecommendations>
+            <p>No recommendations available at this time.</p>
+        </ng-template>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-container">
+                <h2>Koi-Studio<span class="footer-run">is run by WD-302</span></h2>
+                <button class="footer-button" (click)="scrollToTop()">Back to Top</button>
+            </div> 
+            <div class="social-container">
+                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-tiktok-fill"></i></a>
+            </div>
+        </div>
+        <div class="footer-created">
+            <p>&copy; Copyright 2024. All Rights Reserved to Koi Studio</p>
+        </div>
+    </footer>
+</body>

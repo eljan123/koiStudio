@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | KOI STUDIO</title>
+</head>
+<body>
+    <!-- Section 1: Introduction -->
+    <section>
+        <div class="about-intro-container">
+            <div class="about-header-one">
+                <div class="about-container">
+                    <h1>What is Koi Studio?</h1>
+                    <p>Koi Studio is a site created by students of WD - 302, for fans of romance anime and manga. While we may be a small team of passionate creators, we strive to bring you the best recommendations, anime, and manga on our favorite genre romance. Our team is made up of anime romance fans, writers, readers, and a web developer who share a deep love for all things romantic in the anime world. If you're interested in contributing, we'd love to hear from you! Feel free to suggest, or if you have your own recommendations to share with fellow romance anime lovers, please contact us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 2: Mission & Vision -->
+    <section>
+        <div class="mission-container">
+            <div class="mission-image">
+                <img src="../img/About/mission.jpg" alt="Our Mission">
+            </div>
+            <div class="mission-text">
+                <h2>Koi-Studio Mission</h2>
+                <p>At Koi Studio, our mission is to guide anime and manga fans on a journey through the world of romance. We provide carefully curated recommendations to help you discover your next favorite love story, whether you're a long-time enthusiast or a newcomer. With our passion for romance anime and manga, we aim to simplify the search for the most captivating and heartwarming series, creating an experience that resonates with every fan of the genre.</p>
+            </div>
+        </div>
+        <div class="vission-container">
+            <div class="vission-text">
+                <h2>Koi-Studio Vision</h2>
+                <p>Our vision is to become the leading hub for romance anime and manga enthusiasts worldwide, creating a space where every love story is honored and appreciated. We aim to inspire both new and longtime fans to explore the depth and diversity of romantic storytelling, while nurturing a community built on passion, creativity, and love for the art of anime and manga.</p>
+            </div>
+            <div class="vission-image">
+                <img src="../img/About/vision.jpg" alt="Our Vision">
+            </div>
+        </div>
+    </section>
+    <!-- Section 3: Moderators -->
+    <section>
+        <div class="home-top-header">
+            <h2>Moderators</h2>
+        </div>
+        <div class="mod-image-container">
+            <div *ngFor="let moderator of moderators" class="mod-image-box-container">
+                <img [src]="moderator.image" [alt]="moderator.name">
+                <p>{{ moderator.name }}</p>
+                <button class="about-button">
+                    <a routerLink="/recommendation">See More</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="logo-container">
+                <h2>Koi-Studio<span class="footer-run">is run by WD-302</span></h2>
+                <button class="footer-button" (click)="scrollToTop()">Back to Top</button>
+            </div> 
+            <div class="social-container">
+                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-tiktok-fill"></i></a>
+            </div>
+        </div>
+        <div class="footer-created">
+            <p>&copy; Copyright 2024. All Rights Reserved to Koi Studio</p>
+        </div>
+    </footer>
+</body>

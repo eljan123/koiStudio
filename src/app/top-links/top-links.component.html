@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top List | KOI STUDIO</title>
+</head>
+<body>
+    <!-- Section 1: Introduction -->
+    <section>
+        <div class="top-intro-container">
+            <div class="top-header-one">
+                <h1>Welcome to Koi Studio</h1>
+                <p>Where Love Stories Unfold, One Frame at a Time, One page at a time, and get personalized recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Top List of the Week -->
+    <section>
+        <div class="top-header">
+            <h2>Top List of the Week</h2>
+        </div>
+        <div class="top-image-container" *ngIf="isVisible; else noContent">
+            <div class="top-image-box-container" *ngFor="let item of topList">
+                <img [src]="item.image" [alt]="item.title" />
+                <p>{{ item.title }}</p>
+            </div>
+        </div>
+        <ng-template #noContent>
+            <p>No top list items available this week. Check back later!</p>
+        </ng-template>
+    </section>
+
+    <!-- Section 3: Fall of 2024 -->
+    <section>
+        <div class="top-header">
+            <h2>Fall of 2024</h2>
+        </div>
+        <div class="top-image-container">
+            <div class="top-image-box-container" *ngFor="let item of fall2024List">
+                <img [src]="item.image" [alt]="item.title" />
+                <p>{{ item.title }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Best Anime of All Time -->
+    <section>
+        <div class="top-header">
+            <h2>Best Anime of All Time</h2>
+        </div>
+        <div class="top-image-container">
+            <div class="top-image-box-container" *ngFor="let item of bestAnimeList">
+                <img [src]="item.image" [alt]="item.title" />
+                <p>{{ item.title }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo-container">
+                <h2>Koi-Studio<span class="footer-run">is run by WD-302</span></h2>
+                <button class="footer-button" (click)="scrollToTop()">Back to Top</button>
+            </div>
+            <div class="social-container">
+                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-tiktok-fill"></i></a>
+            </div>
+        </div>
+        <div class="footer-created">
+            <p>&copy; Copyright 2024. All Rights Reserved to Koi Studio</p>
+        </div>
+    </footer>
+</body>
